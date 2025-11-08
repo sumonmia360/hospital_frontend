@@ -1,12 +1,12 @@
-* {
+/* * {
   border: 1px solid black;
-}
+} */
 
 .human-body {
   width: 507px;
   position: relative;
   padding-top: 240px;
-  height: 560px;
+  height: 500px;
   display: block;
   margin: 40px auto;
 }
@@ -70,14 +70,22 @@
   top: 205px;
   z-index: 9999;
 }
-
+/* =============================== */
+.human-body svg.right-knee {
+  margin-left: 1px;
+  top: 320px;
+  z-index: 10000;
+  /* border: 1px solid black; */
+}
 .human-body svg.right-leg {
   margin-left: 1.5px;
-  top: 205px;
-  z-index: 9999;
+  top: 186px;
+  z-index: 10000;
   /* border: 1px solid black; */
 }
 
+
+/* ================================= */
 .human-body svg.left-hand {
   margin-left: -102.5px;
   top: 224px;

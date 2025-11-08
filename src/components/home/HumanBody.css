@@ -65,11 +65,22 @@
   top: 130px;
 }
 
-.human-body svg.left-leg {
-  margin-left: -46.5px;
-  top: 205px;
+/* ====== */
+
+.human-body svg.left-knee {
+  margin-left: -45px;
+  top: 320px;
   z-index: 9999;
+    /* border: 1px solid black; */
 }
+.human-body svg.left-leg {
+  margin-left: -45px;
+  top: 186px;
+  z-index: 9999;
+    /* border: 1px solid black; */
+}
+
+/* ====== */
 /* =============================== */
 .human-body svg.right-knee {
   margin-left: 1px;

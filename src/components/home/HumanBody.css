@@ -3,7 +3,7 @@
 } */
 
 .human-body {
-  width: 507px;
+  width: 550px;
   position: relative;
   padding-top: 240px;
   height: 500px;
@@ -16,7 +16,7 @@
 }
 
 .human-body svg:hover path {
-  fill: #BFD2F8;
+  fill: #6e95df;
   /* fill: #1F2B6C; */
 
 }
@@ -27,6 +27,15 @@
   fill: #1F2B6C;
   /* fill: #BFD2F8; */
 
+}
+.human-body svg.body-text-box {
+  margin-left: -240px;
+  top: -2px;
+ 
+  width: 530px;
+  height: 500px;
+  fill: #1F2B6C;
+  /* border: 1px solid #1F2B6C; */
 }
 
 .human-body svg.head {

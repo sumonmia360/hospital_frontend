@@ -15,8 +15,114 @@ const HumanBody = () => {
   };
 
   return (
-    <div className=" mx-auto  flex justify-center gap-10  border w-full h-full">
-      <div className="human-body " onClick={handlePieceClick}>
+    <div className=" mx-auto  flex justify-center gap-10  w-full h-full ml-30 mt-16">
+      <div className="human-body  " onClick={handlePieceClick}>
+        <svg   className="body-text-box"  xmlns="http://www.w3.org/2000/svg">
+        {/* Head */}
+          <path
+            d="m 260 5 L 410 5"
+            stroke="#1F2B6C"
+            stroke-width="1"
+           
+          />
+          {/* Eye */}
+          <path
+           
+            d="m 50 25 L 210 25"
+            stroke="#1F2B6C"
+            stroke-width="1"
+           
+          />
+          {/* Nose */}
+
+          <path
+           
+            d="m 50 50 L 220 50"
+            stroke="#1F2B6C"
+            stroke-width="1"
+           
+          />
+          {/* Ear */}
+          <path
+           
+            d="m 270 40 L 410 40"
+            stroke="#1F2B6C"
+            stroke-width="1"
+           
+          />
+          {/* teeth */}
+          <path
+           
+            d="m 248 60 L 410 60"
+            stroke="#1F2B6C"
+            stroke-width="1"
+           
+          />
+          {/* Heart */}
+          <path
+           
+            d="m 268 100 L 410 100"
+            stroke="#1F2B6C"
+            stroke-width="1"
+           
+          />
+
+          {/* Throat */}
+
+          <path
+           
+            d="m 50 75 L 210 75"
+            stroke="#1F2B6C"
+            stroke-width="1"
+           
+          />
+          {/* Aram */}
+
+          <path
+           
+            d="m 50 140 L 180 140"
+            stroke="#1F2B6C"
+            stroke-width="1"
+           
+          />
+
+        
+          <g
+            font-size="14"
+            font-family="sans-serif"
+            fill="#1F2B6C"
+            text-anchor="middle"
+          >
+            <text x="430" y="20" dy="-10">
+              Head
+            </text>
+            <text x="430" y="55" dy="-10">
+              Ear
+            </text>
+            <text x="430" y="75" dy="-10">
+              Teeth
+            </text>
+            <text x="430" y="115" dy="-10">
+              Heart
+            </text>
+            <text x="32" y="39" dy="-10">
+              Eye
+            </text>
+            <text x="28" y="64" dy="-10">
+              Nose
+            </text>
+            <text x="25" y="89" dy="-10">
+              Throat
+            </text>
+            <text x="30" y="154" dy="-10">
+              Arm
+            </text>
+            {/* <text x="370" y="35" dy="-10">
+              Head
+            </text> */}
+           
+          </g>
+        </svg>
         <svg
           data-position="head"
           className="head"
@@ -25,7 +131,13 @@ const HumanBody = () => {
           height="95.031"
           viewBox="0 0 56.594 95.031"
         >
-          <path d="M15.92 68.5l8.8 12.546 3.97 13.984-9.254-7.38-4.622-15.848zm27.1 0l-8.8 12.546-3.976 13.988 9.254-7.38 4.622-15.848zm6.11-27.775l.108-11.775-21.16-14.742L8.123 26.133 8.09 40.19l-3.24.215 1.462 9.732 5.208 1.81 2.36 11.63 9.72 11.018 10.856-.324 9.56-10.37 1.918-11.952 5.207-1.81 1.342-9.517zm-43.085-1.84l-.257-13.82L28.226 11.9l23.618 15.755-.216 10.37 4.976-17.085L42.556 2.376 25.49 0 10.803 3.673.002 24.415z" />
+         
+          <path d="M15.92 68.5l8.8 12.546 3.97 13.984-9.254-7.38-4.622-15.848 z m 27.1 0l-8.8 12.546-3.976 13.988 9.254-7.38 4.622-15.848z
+          
+          m 6.11-27.775l.108-11.775-21.16-14.742L8.123 26.133 8.09 40.19l-3.24.215 1.462 9.732 5.208 1.81 2.36 11.63 9.72 11.018 10.856-.324 9.56-10.37 1.918-11.952 5.207-1.81 1.342-9.517z
+          
+          m-43.085-1.84l-.257-13.82L28.226 11.9l23.618 15.755-.216 10.37 4.976-17.085 L42.556 2.376 25.49 0 10.803 3.673.002 24.415 z " />
+       
         </svg>
         <svg
           data-position="left-shoulder"

@@ -27,7 +27,8 @@
 .human-body svg {
   position: absolute;
   left: 50%;
-  fill: #1F2B6C;
+  /* fill: #1F2B6C; */
+  /* fill: #6e95df; */
   /* fill: #BFD2F8; */
 
 }
@@ -163,7 +164,8 @@
   fill: #1F2B6C;
 }
 
+
 #linePath {
   stroke:#1F2B6C; 
-  stroke-width: 1;
+  stroke-width: 0.5px;
 }

@@ -15,112 +15,137 @@ const HumanBody = () => {
   };
 
   return (
-    <div className=" mx-auto  flex justify-center gap-10  w-full h-full ml-30 mt-16">
-      <div className="human-body  " onClick={handlePieceClick}>
-        <svg   className="body-text-box"  xmlns="http://www.w3.org/2000/svg">
-        {/* Head */}
-          <path
-            d="m 260 5 L 410 5"
-            stroke="#1F2B6C"
-            stroke-width="1"
-           
-          />
+     <div className=" mx-auto  flex justify-around  w-full h-full ">
+      {/* body col */}
+      <div className="flex flex-col items-center space-y-4 pl-2">
+        <div className="text-[#1F2B6C] text-center font-bold mt-2">Select Body Part</div>
+        <div className="human-body  " onClick={handlePieceClick}>
+        <svg className="body-text-box" xmlns="http://www.w3.org/2000/svg">
+          {/* Head */}
+          <path d="m 260 5 L 385 5" stroke="#1F2B6C" stroke-width="1" />
           {/* Eye */}
-          <path
-           
-            d="m 50 25 L 210 25"
-            stroke="#1F2B6C"
-            stroke-width="1"
-           
-          />
+          <path d="m 100 25 L 210 25" stroke="#1F2B6C" stroke-width="1" />
           {/* Nose */}
 
-          <path
-           
-            d="m 50 50 L 220 50"
-            stroke="#1F2B6C"
-            stroke-width="1"
-           
-          />
+          <path d="m 100 50 L 220 50" stroke="#1F2B6C" stroke-width="1" />
           {/* Ear */}
-          <path
-           
-            d="m 270 40 L 410 40"
-            stroke="#1F2B6C"
-            stroke-width="1"
-           
-          />
+          <path d="m 270 40 L 385 40" stroke="#1F2B6C" stroke-width="1" />
           {/* teeth */}
-          <path
-           
-            d="m 248 60 L 410 60"
-            stroke="#1F2B6C"
-            stroke-width="1"
-           
-          />
+          <path d="m 248 60 L 385 60" stroke="#1F2B6C" stroke-width="1" />
           {/* Heart */}
-          <path
-           
-            d="m 268 100 L 410 100"
-            stroke="#1F2B6C"
-            stroke-width="1"
-           
-          />
+          <path d="m 268 100 L 385 100" stroke="#1F2B6C" stroke-width="1" />
+          {/* Lungs */}
+          <path d="m 268 150 L 385 150" stroke="#1F2B6C" stroke-width="1" />
+          {/* Elbow */}
+          <path d="m 300 175 L 385 175" stroke="#1F2B6C" stroke-width="1" />
+          {/* Kidneys */}
+          <path d="m 250 200 L 385 200" stroke="#1F2B6C" stroke-width="1" />
+          {/* Stomach */}
+          <path d="m 240 220 L 385 220" stroke="#1F2B6C" stroke-width="1" />
+          {/* Hip */}
+          <path d="m 280 250 L 385 250" stroke="#1F2B6C" stroke-width="1" />  
+          {/* Knee */}
+          <path d="m 260 350 L 385 350" stroke="#1F2B6C" stroke-width="1" />
+          {/* Ankle */}
+          <path d="m 260 459 L 385 459" stroke="#1F2B6C" stroke-width="1" />
 
           {/* Throat */}
 
-          <path
-           
-            d="m 50 75 L 210 75"
-            stroke="#1F2B6C"
-            stroke-width="1"
-           
-          />
+          <path d="m 100 75 L 210 75" stroke="#1F2B6C" stroke-width="1" />
           {/* Aram */}
 
-          <path
-           
-            d="m 50 140 L 180 140"
-            stroke="#1F2B6C"
-            stroke-width="1"
-           
-          />
+          <path d="m 100 140 L 180 140" stroke="#1F2B6C" stroke-width="1" />
+          {/* Liver */}
 
-        
+          <path d="m 100 160 L 180 160" stroke="#1F2B6C" stroke-width="1" />
+          {/* Spine */}
+
+          <path d="m 100 185 L 230 185" stroke="#1F2B6C" stroke-width="1" />
+          {/* Lower Back */}
+
+          <path d="m 100 205 L 230 205" stroke="#1F2B6C" stroke-width="1" />
+          {/* Thigh */}
+
+          <path d="m 100 290 L 220 290" stroke="#1F2B6C" stroke-width="1" />
+          {/* skin */}
+
+          <path d="m 100 325 L 205 325" stroke="#1F2B6C" stroke-width="1" />
+          {/* Foot */}
+
+          <path d="m 100 475 L 210 475" stroke="#1F2B6C" stroke-width="1" />
+
           <g
             font-size="14"
             font-family="sans-serif"
             fill="#1F2B6C"
             text-anchor="middle"
           >
-            <text x="430" y="20" dy="-10">
+            <text x="408" y="20" dy="-10">
               Head
             </text>
-            <text x="430" y="55" dy="-10">
+            <text x="402" y="55" dy="-10">
               Ear
             </text>
-            <text x="430" y="75" dy="-10">
+            <text x="408" y="75" dy="-10">
               Teeth
             </text>
-            <text x="430" y="115" dy="-10">
+            <text x="408" y="115" dy="-10">
               Heart
             </text>
-            <text x="32" y="39" dy="-10">
+            <text x="408" y="164" dy="-10">
+              Lungs
+            </text>
+            <text x="408" y="189" dy="-10">
+              Elbow
+            </text>
+            <text x="415" y="215" dy="-10">
+              Kidneys
+            </text>
+            <text x="418" y="234" dy="-10">
+              Stomach
+            </text>
+            <text x="402" y="264" dy="-10">
+              Hip
+            </text>
+            <text x="408" y="474" dy="-10">
+              Knee
+            </text>
+            <text x="408" y="364" dy="-10">
+              Ankle
+            </text>
+            <text x="82" y="39" dy="-10">
               Eye
             </text>
-            <text x="28" y="64" dy="-10">
+            <text x="78" y="64" dy="-10">
               Nose
             </text>
-            <text x="25" y="89" dy="-10">
+            <text x="74" y="89" dy="-10">
               Throat
             </text>
-            <text x="30" y="154" dy="-10">
+            <text x="78" y="154" dy="-10">
               Arm
+            </text>
+            <text x="78" y="174" dy="-10">
+              Liver
+            </text>
+            <text x="76" y="199" dy="-10">
+              Spine
+            </text>
+            <text x="76" y="218" dy="-10">
+              Lower
+            </text>
+            <text x="76" y="305" dy="-10">
+              Thigh
+            </text>
+            <text x="78" y="338" dy="-10">
+              Skin
+            </text>
+            <text x="78" y="490" dy="-10">
+              Foot
             </text>
             {/* <text x="370" y="35" dy="-10">
               Head
             </text> */}
-           
           </g>
         </svg>
         <svg
@@ -131,13 +156,13 @@ const HumanBody = () => {
           height="95.031"
           viewBox="0 0 56.594 95.031"
         >
-         
-          <path d="M15.92 68.5l8.8 12.546 3.97 13.984-9.254-7.38-4.622-15.848 z m 27.1 0l-8.8 12.546-3.976 13.988 9.254-7.38 4.622-15.848z
+          <path
+            d="M15.92 68.5l8.8 12.546 3.97 13.984-9.254-7.38-4.622-15.848 z m 27.1 0l-8.8 12.546-3.976 13.988 9.254-7.38 4.622-15.848z
           
           m 6.11-27.775l.108-11.775-21.16-14.742L8.123 26.133 8.09 40.19l-3.24.215 1.462 9.732 5.208 1.81 2.36 11.63 9.72 11.018 10.856-.324 9.56-10.37 1.918-11.952 5.207-1.81 1.342-9.517z
           
-          m-43.085-1.84l-.257-13.82L28.226 11.9l23.618 15.755-.216 10.37 4.976-17.085 L42.556 2.376 25.49 0 10.803 3.673.002 24.415 z " />
-       
+          m-43.085-1.84l-.257-13.82L28.226 11.9l23.618 15.755-.216 10.37 4.976-17.085 L42.556 2.376 25.49 0 10.803 3.673.002 24.415 z "
+          />
         </svg>
         <svg
           data-position="left-shoulder"
@@ -297,6 +322,13 @@ const HumanBody = () => {
           <path d="m 19.558357,1.92821 c -22.1993328,20.55867 -11.0996668,10.27933 0,0 z m 5.975,5.989 -0.664,18.415 -1.55,6.435 -4.647,0 -1.327,-4.437 -1.55,-0.222 0.332,4.437 -5.864,-1.778 -1.5499998,-0.887 -6.64,-1.442 -0.22,-5.214 6.418,-10.87 4.4259998,-5.548 c 9.991542,-3.26362 9.41586,-8.41457 12.836,1.111 z" />
         </svg>
       </div>
+      {/* info col */}
+      <div className="border rounded p-2 border-[#1F2B6C] text-[#1F2B6C]">Human Body</div>
+      </div>
+      <div id="area" className=" ">
+        Area: <span id="data">{selectedArea}</span>
+      </div>
+      {/* info col */}
       <div id="area" className=" ">
         Area: <span id="data">{selectedArea}</span>
       </div>

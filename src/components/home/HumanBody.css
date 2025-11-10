@@ -2,6 +2,8 @@
   border: 1px solid black;
 } */
 
+
+
 .human-body {
   width: 475px;
   position: relative;
@@ -151,4 +153,17 @@
 
 #area #data {
   color: black;
+}
+
+
+#groupsText{
+  text-anchor: middle;
+  font-size: 14px;
+  font-family: sans-serif;
+  fill: #1F2B6C;
+}
+
+#linePath {
+  stroke:#1F2B6C; 
+  stroke-width: 1;
 }

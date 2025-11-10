@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Aurora Hospital",
+  title: "Aurora Specialized Hospital Ltd",
   description: "Aurora Specialized Hospital Ltd.",
 };
 

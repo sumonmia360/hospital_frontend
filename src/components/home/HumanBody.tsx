@@ -1,10 +1,19 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./HumanBody.css";
+import useSWR from "swr";
+import axios from "axios";
+interface Department {
+  id: number;
+  name: string;
+  description: string;
+  created_by?: null;
+}
 
+const fetcher = (url) => axios.get(url).then((res) => res.data);
 const HumanBody = () => {
-  const [selectedArea, setSelectedArea] = useState("head");
-
+  const [selectedArea, setSelectedArea] = useState(1);
+  const [departmentData, setDepartmentData] = useState(null);
   const handlePieceClick = (event) => {
     const position =
       event.target.getAttribute("data-position") ||
@@ -14,8 +23,16 @@ const HumanBody = () => {
     }
   };
 
+  const { data, error, isLoading } = useSWR(
+    `http://192.168.88.174:3000/api/department_group/${selectedArea}`,
+    fetcher
+  );
+  console.log(data);
+  //  const {id,group_name,departments} = data
+  //  console.log(departments);
+
   return (
-    <div className=" mx-auto  flex justify-around  w-full h-full ">
+    <div className=" mx-auto  flex justify-around  w-full h-full gap-3 text-center">
       {/* body col */}
       <div className="flex flex-col items-center space-y-4 pl-2">
         <div className="text-[#1F2B6C] text-center font-bold mt-2">
@@ -152,7 +169,7 @@ const HumanBody = () => {
             </g>
           </svg>
           <svg
-            data-position="head"
+            data-position="1"
             className={`head fill-[#1F2B6C]  ${
               selectedArea === "head" ? "fill-[#6e95df]" : "fill-[#1F2B6C] "
             }`}
@@ -170,7 +187,7 @@ const HumanBody = () => {
             />
           </svg>
           <svg
-            data-position="left-shoulder"
+            data-position="2"
             className={`left-shoulder fill-[#1F2B6C]  ${
               selectedArea === "left-shoulder"
                 ? "fill-[#6e95df]"
@@ -184,7 +201,7 @@ const HumanBody = () => {
             <path d="m 38.244,-0.004 1.98,9.232 -11.653,2.857 -7.474,-2.637 z M 17.005,10.536 12.962,8.35 0.306,22.35 0.244,27.675 c 0,0 16.52,-17.015 16.764,-17.14 z m 1.285,0.58 C 18.3,11.396 0.528,30.038 0.528,30.038 L -0.01,46.595 6.147,36.045 18.017,30.989 26.374,15.6 Z" />
           </svg>
           <svg
-            data-position="right-shoulder"
+            data-position="2"
             className={`right-shoulder   ${
               selectedArea === "right-shoulder"
                 ? "fill-[#6e95df]"
@@ -198,7 +215,7 @@ const HumanBody = () => {
             <path d="m 3.2759972,-0.004 -1.98,9.232 11.6529998,2.857 7.473999,-2.637 z m 21.2379988,10.54 4.044,-2.187 12.656,14 0.07,5.33 c 0,0 -16.524,-17.019 -16.769,-17.144 z m -1.285,0.58 c -0.008,0.28 17.762,18.922 17.762,18.922 l 0.537,16.557 -6.157,-10.55 -11.871,-5.057 L 15.147997,15.6 Z" />
           </svg>
           <svg
-            data-position="right-arm"
+            data-position="5"
             className={`right-arm   ${
               selectedArea === "right-arm"
                 ? "fill-[#6e95df]"
@@ -212,7 +229,7 @@ const HumanBody = () => {
             <path d="m 18.997,56.5 a 1.678,1.678 0 0 0 0.427,0.33 L 18.489,65.054 5.512,51.164 4.312,42.206 A 168.2,168.2 0 0 1 18.997,56.5 Z m -1.387,12.522 18.07,48.91 -5.757,1.333 L 10.798,79.825 7.28,57.778 17.61,69.022 Z m 5.278,-18.96 -2.638,18.74 17.2,46.023 2.657,-1.775 L 33.463,77.532 22.888,50.062 Z M 4.083,37.739 A 1.78,1.78 0 0 0 3.676,37.499 L 0.01,10.154 7.047,0.015 l 7.258,10.58 6.16,37.04 -0.566,4.973 A 151.447,151.447 0 0 0 4.091,37.738 l -0.008,10e-4 z m 13.742,-28.906 3.3,35.276 2.2,-26.238 -5.5,-9.038 z" />
           </svg>
           <svg
-            data-position="left-arm"
+            data-position="5"
             className={`left-arm   ${
               selectedArea === "left-arm" ? "fill-[#6e95df]" : "fill-[#1F2B6C] "
             }`}
@@ -224,7 +241,7 @@ const HumanBody = () => {
             <path d="m21.12,56.5a1.678,1.678 0 0 1 -0.427,0.33l0.935,8.224l12.977,-13.89l1.2,-8.958a168.2,168.2 0 0 0 -14.685,14.294zm1.387,12.522l-18.07,48.91l5.757,1.333l19.125,-39.44l3.518,-22.047l-10.33,11.244zm-5.278,-18.96l2.638,18.74l-17.2,46.023l-2.657,-1.775l6.644,-35.518l10.575,-27.47zm18.805,-12.323a1.78,1.78 0 0 1 0.407,-0.24l3.666,-27.345l-7.037,-10.139l-7.258,10.58l-6.16,37.04l0.566,4.973a151.447,151.447 0 0 1 15.808,-14.87l0.008,0.001zm-13.742,-28.906l-3.3,35.276l-2.2,-26.238l5.5,-9.038z" />
           </svg>
           <svg
-            data-position="chest"
+            data-position="3"
             className={`chest   ${
               selectedArea === "chest" ? "fill-[#6e95df]" : "fill-[#1F2B6C] "
             }`}
@@ -236,7 +253,7 @@ const HumanBody = () => {
             <path d="M19.32 0l-9.225 16.488-10.1 5.056 6.15 4.836 4.832 14.07 11.2 4.616 17.85-8.828-4.452-34.7zm47.934 0l9.225 16.488 10.1 5.056-6.15 4.836-4.833 14.07-11.2 4.616-17.844-8.828 4.45-34.7z" />
           </svg>
           <svg
-            data-position="stomach"
+            data-position="4"
             className={`stomach   ${
               selectedArea === "stomach" ? "fill-[#6e95df]" : "fill-[#1F2B6C] "
             }`}
@@ -250,9 +267,11 @@ const HumanBody = () => {
 
           {/* ============= */}
           <svg
-            data-position="left-knee"
+            data-position="5"
             className={`left-knee   ${
-              selectedArea === "left-knee" ? "fill-[#6e95df]" : "fill-[#1F2B6C] "
+              selectedArea === "left-knee"
+                ? "fill-[#6e95df]"
+                : "fill-[#1F2B6C] "
             }`}
             xmlns="http://www.w3.org/2000/svg"
             width="50.626"
@@ -262,8 +281,8 @@ const HumanBody = () => {
             <path d="m 18.00179,139.99461 -0.664,5.99 4.647,5.77 1.55,9.1 3.1,1.33 2.655,-13.755 1.77,-4.88 -1.55,-3.107 z m 20.582,0.444 -3.32,9.318 -7.082,13.755 1.77,12.647 5.09,-14.2 4.205,-7.982 z m -26.557,-12.645 5.09,27.29 -3.32,-1.777 -2.656,8.875 z m 22.795,42.374 -1.55,4.88 -3.32,20.634 -0.442,27.51 4.65,26.847 -0.223,-34.39 4.87,-13.754 0.663,-15.087 z m -10.623,12.424 1.106,41.267 c 14.157565,64.57987 -5.846437,10.46082 -16.8199998,-29.07 l 5.5329998,-36.384 z " />
           </svg>
           <svg
-            data-position="left-leg"
-             className={`left-leg   ${
+            data-position="5"
+            className={`left-leg   ${
               selectedArea === "left-leg" ? "fill-[#6e95df]" : "fill-[#1F2B6C] "
             }`}
             xmlns="http://www.w3.org/2000/svg"
@@ -281,9 +300,11 @@ const HumanBody = () => {
           {/* ============= */}
           {/* ========================================================================================================================================================================= */}
           <svg
-            data-position="right-knee"
+            data-position="5"
             className={`right-knee   ${
-              selectedArea === "right-knee" ? "fill-[#6e95df]" : "fill-[#1F2B6C] "
+              selectedArea === "right-knee"
+                ? "fill-[#6e95df]"
+                : "fill-[#1F2B6C] "
             }`}
             xmlns="http://www.w3.org/2000/svg"
             width="50.626"
@@ -299,9 +320,11 @@ const HumanBody = () => {
 
           {/* ========================================================================================================================================================================= */}
           <svg
-            data-position="right-leg"
+            data-position="5"
             className={`right-leg   ${
-              selectedArea === "right-leg" ? "fill-[#6e95df]" : "fill-[#1F2B6C] "
+              selectedArea === "right-leg"
+                ? "fill-[#6e95df]"
+                : "fill-[#1F2B6C] "
             }`}
             xmlns="http://www.w3.org/2000/svg"
             width="93.626"
@@ -312,9 +335,11 @@ const HumanBody = () => {
           </svg>
           {/* ========================================================================================================================================================================= */}
           <svg
-            data-position="left-hand"
+            data-position="5"
             className={`left-hand   ${
-              selectedArea === "left-hand" ? "fill-[#6e95df]" : "fill-[#1F2B6C] "
+              selectedArea === "left-hand"
+                ? "fill-[#6e95df]"
+                : "fill-[#1F2B6C] "
             }`}
             xmlns="http://www.w3.org/2000/svg"
             width="205"
@@ -325,9 +350,11 @@ const HumanBody = () => {
           </svg>
 
           <svg
-            data-position="right-hand"
+            data-position="5"
             className={`right-hand   ${
-              selectedArea === "right-hand" ? "fill-[#6e95df]" : "fill-[#1F2B6C] "
+              selectedArea === "right-hand"
+                ? "fill-[#6e95df]"
+                : "fill-[#1F2B6C] "
             }`}
             xmlns="http://www.w3.org/2000/svg"
             width="205"
@@ -337,9 +364,11 @@ const HumanBody = () => {
             <path d="m 13.793386,-0.00198533 -2.88,6.90000163 -8.4120002,1.335 -0.664,12.4579837 4.427,17.8 2.878,-0.22 -2.8,-11.847 2.99,-0.084 4.6760002,12.6 3.544,-0.446 -4.4,-12.736 3.072,-0.584 5.978,13.543 4.428,-0.445 -6.088,-14.1 2.1,-1.25 7.528,12.012 3.764,-0.445 -11.286,-21.589 1.107,-1.78 10.628,4.45 0.665,-2.447 -8.635,-7.7859837 z" />
           </svg>
           <svg
-            data-position="right-foot"
+            data-position="5"
             className={`right-foot   ${
-              selectedArea === "right-foot" ? "fill-[#6e95df]" : "fill-[#1F2B6C] "
+              selectedArea === "right-foot"
+                ? "fill-[#6e95df]"
+                : "fill-[#1F2B6C] "
             }`}
             xmlns="http://www.w3.org/2000/svg"
             width="205"
@@ -349,9 +378,11 @@ const HumanBody = () => {
             <path d="m 11.723492,2.35897 c -40.202667,20.558 -20.1013335,10.279 0,0 z m -5.9740005,5.989 0.663,18.415 1.546,6.435 4.6480005,0 1.328,-4.437 1.55,-0.222 -0.333,4.437 5.863,-1.778 1.55,-0.887 6.638,-1.442 0.222,-5.214 -6.418,-10.868 -4.426,-5.547 -10.8440005,-4.437 z" />
           </svg>
           <svg
-            data-position="left-foot"
+            data-position="5"
             className={`left-foot   ${
-              selectedArea === "left-foot" ? "fill-[#6e95df]" : "fill-[#1F2B6C] "
+              selectedArea === "left-foot"
+                ? "fill-[#6e95df]"
+                : "fill-[#1F2B6C] "
             }`}
             xmlns="http://www.w3.org/2000/svg"
             width="205"
@@ -366,12 +397,25 @@ const HumanBody = () => {
           Human Body
         </div>
       </div>
-      <div id="area" className=" ">
-        Area: <span id="data">{selectedArea}</span>
+      {/* Departments info */}
+      <div className="w-full h-full">
+        <h1>Departments</h1>
+
+        <div className=" grid grid-cols-2 gap-5 ">
+          <>
+            {data?.departments.map((dept: Department) => (
+              <div key={dept.id} className="border-2 border-blue-600 bg-amber-300 p-5 h-20 justify-center items-center rounded-xl flex">
+                {" "}
+                <h1>{dept.name}</h1>
+              </div>
+            ))}
+          </>
+        </div>
       </div>
-      {/* info col */}
-      <div id="area" className=" ">
-        Area: <span id="data">{selectedArea}</span>
+      {/* Doctors info */}
+      <div className="w-full">
+        <h1>Doctors</h1>
+        <div className="h-full border border-b-red-600 w-full"><h1>{selectedArea}</h1></div>
       </div>
     </div>
   );

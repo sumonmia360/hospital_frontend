@@ -63,3 +63,13 @@
     transform: translateX(0px);
   }
 }
+
+.bodyParts_wrapper:hover .bodyParts {
+  fill: #6e95df;
+  cursor: pointer;
+}
+.bodyPartsGroup:hover ~ .labelGroup .labelText,
+.labelGroup:hover .labelText {
+  fill: #6e95df;
+  transform: translateX(0px);
+}

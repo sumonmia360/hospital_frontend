@@ -1,0 +1,65 @@
+.bodyParts {
+  fill: #af9763;
+  cursor: pointer;
+}
+.bodyLines {
+  fill: #f2f2f2;
+}
+.syzst2 {
+  fill: none;
+}
+.labelLine {
+  fill: none;
+  stroke: #b3b3b3;
+  stroke-width: 2;
+  pointer-events: none;
+}
+.labelText {
+  fill: #af9763;
+  fill-rule: nonzero;
+  transform: translateX(10px);
+  transition: all 0.3s ease;
+}
+.labelGroup .labelText {
+  transform: translateX(-5px);
+}
+.labelGroup.is_right .labelText {
+  transform: translateX(-10px);
+}
+.labelArea {
+  fill: transparent;
+  cursor: pointer;
+}
+.bodyParts_wrapper .labelGroup,
+.bodyParts_wrapper .labelGroup-sub {
+  transform: all 0.2s ease;
+}
+.bodyParts_wrapper .labelLine,
+.bodyParts_wrapper .labelText {
+  pointer-events: none;
+}
+.bodyParts_wrapper.hovered .labelGroup,
+.bodyParts_wrapper.hovered .labelGroup-sub {
+  opacity: 0.3;
+}
+.bodyParts_wrapper .labelGroup:hover,
+.bodyParts_wrapper .labelGroup-sub:hover,
+.bodyPartsGroup:hover ~ .labelGroup {
+  opacity: 1;
+}
+.bodyParts_wrapper:hover .bodyParts {
+  fill: #f58220;
+  cursor: pointer;
+}
+.bodyPartsGroup:hover ~ .labelGroup .labelText,
+.labelGroup:hover .labelText {
+  fill: #f58220;
+  transform: translateX(0px);
+  .bodyParts_group:hover .bodyParts {
+    fill: #f58220;
+  }
+  .bodyParts_group:hover .labelGroup .labelText {
+    fill: #f58220;
+    transform: translateX(0px);
+  }
+}

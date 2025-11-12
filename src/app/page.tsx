@@ -19,10 +19,6 @@ export default function Home() {
       </header>
       <main>
         <section className="max-w-7xl mx-auto border">
-          <div className="flex items-center justify-between mb-100 border border-red-600 h-[1000px]">
-            {/* <HumanBody /> */}
-          </div>
-
           <div>
             <HumanBodyFemale></HumanBodyFemale>
           </div>

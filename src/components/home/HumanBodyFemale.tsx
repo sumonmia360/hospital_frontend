@@ -4,26 +4,30 @@ import "./BodyTest.css";
 export default function HumanBodyFemale() {
   const [selectedArea, setSelectedArea] = useState("Test");
 
-  const handlePieceClick = () => {
-    console.log('Allah huakbar');
-    
+  const handlePieceClick = (gName: string) => {
+    setSelectedArea(gName);
   };
-  // console.log(selectedArea);
+  console.log(selectedArea);
 
   return (
-    <div className="max-w-xl">
+    <div className="max-w-xl flex justify-between">
       {/* ================================================================= */}
 
-      <div >
+      <div className="w-full h-[1000px]  ">
         <svg
-          data-position="head"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="140 10 1450 1500"
           max-width="3000px"
           width="100%"
+          className="h-full border"
         >
-          <g className="bodyParts_wrapper Head" onClick={handlePieceClick}>
-            <g className="bodyPartsGroup" onClick={handlePieceClick}>
+          <g
+            className={`bodyParts_wrapper Head ${
+              selectedArea === "Head" ? "fill-[#6e95df]" : "fill-[#1F2B6C]"
+            }`}
+            onClick={() => handlePieceClick("Head")}
+          >
+            <g className="bodyPartsGroup">
               <path
                 className="bodyParts"
                 d="M803.5 131.12c-3.8-14.89-14.97-36.94-50.42-39.44 0 0-.97-.1-2.68-.12h-.01c-1.86-.44-3.47.12-3.47.12-35.45 2.5-46.62 24.55-50.42 39.44-4.4 17.23-9.97 81.53-2.98 99.85 1.96 5.16 5.58 11.43 10.14 17.56.1.14.21.28.31.41l1.21.48c3.91 2.76 16.48 11.73 18.2 14.17v.01c10.76 9.89 23.07 12.86 26.53 13.52.08.02.17.03.25.05.3-.05.7-.13 1.16-.23 4.42-.96 15.86-4.18 25.82-13.34 1.71-2.44 14.3-11.41 18.21-14.18l.7-.5c.1-.13.2-.27.3-.4 4.55-6.13 8.18-12.4 10.14-17.55 6.99-18.32 1.41-82.62-2.99-99.85z"
@@ -135,7 +139,12 @@ export default function HumanBodyFemale() {
               </g>
             </g>
           </g>
-          <g className="bodyParts_wrapper Neck">
+          <g
+            className={`bodyParts_wrapper  Neck ${
+              selectedArea === "Neck" ? "fill-[#6e95df]" : "fill-[#1F2B6C]"
+            }`}
+            onClick={() => handlePieceClick("Neck")}
+          >
             <g className="bodyPartsGroup">
               <path
                 className="bodyLines"
@@ -220,7 +229,12 @@ export default function HumanBodyFemale() {
               </g>
             </g>
           </g>
-          <g className="bodyParts_wrapper Right_Shoulder">
+          <g
+            className={`bodyParts_wrapper  Right_Shoulder ${
+              selectedArea === "Right_Shoulder" ? "fill-[#6e95df]" : "fill-[#1F2B6C]"
+            }`}
+            onClick={() => handlePieceClick("Right_Shoulder")}
+          >
             <g className="bodyPartsGroup">
               <path
                 className="bodyParts"
@@ -299,7 +313,12 @@ export default function HumanBodyFemale() {
               </g>
             </g>
           </g>
-          <g className="bodyParts_wrapper Left_Shoulder">
+          <g
+            className={`bodyParts_wrapper  Left_Shoulder ${
+              selectedArea === "Left_Shoulder" ? "fill-[#6e95df]" : "fill-[#1F2B6C]"
+            }`}
+            onClick={() => handlePieceClick("Left_Shoulder")}
+          >
             <g className="bodyPartsGroup">
               <path
                 className="bodyLines"
@@ -374,7 +393,12 @@ export default function HumanBodyFemale() {
               </g>
             </g>
           </g>
-          <g className="bodyParts_wrapper Right_Thigh">
+          <g
+            className={`bodyParts_wrapper  Right_Thigh ${
+              selectedArea === "Right_Thigh" ? "fill-[#6e95df]" : "fill-[#1F2B6C]"
+            }`}
+            onClick={() => handlePieceClick("Right_Thigh")}
+          >
             <g className="bodyPartsGroup">
               <path
                 className="bodyLines"
@@ -443,7 +467,12 @@ export default function HumanBodyFemale() {
               </g>
             </g>
           </g>
-          <g className="bodyParts_wrapper Left_Thigh">
+          <g
+            className={`bodyParts_wrapper  Left_Thigh ${
+              selectedArea === "Left_Thigh" ? "fill-[#6e95df]" : "fill-[#1F2B6C]"
+            }`}
+            onClick={() => handlePieceClick("Left_Thigh")}
+          >
             <g className="bodyPartsGroup">
               <path
                 className="bodyLines"
@@ -487,7 +516,12 @@ export default function HumanBodyFemale() {
               ></path>
             </g>
           </g>
-          <g className="bodyParts_wrapper Right_Knee">
+          <g
+            className={`bodyParts_wrapper  Right_Knee ${
+              selectedArea === "Right_Knee" ? "fill-[#6e95df]" : "fill-[#1F2B6C]"
+            }`}
+            onClick={() => handlePieceClick("Right_Knee")}
+          >
             <g className="bodyPartsGroup">
               <path
                 className="bodyParts"
@@ -531,7 +565,12 @@ export default function HumanBodyFemale() {
               ></path>
             </g>
           </g>
-          <g className="bodyParts_wrapper Left_Knee">
+          <g
+            className={`bodyParts_wrapper  Left_Knee ${
+              selectedArea === "Left_Knee" ? "fill-[#6e95df]" : "fill-[#1F2B6C]"
+            }`}
+            onClick={() => handlePieceClick("Left_Knee")}
+          >
             <g className="bodyPartsGroup">
               <path
                 className="bodyLines"
@@ -584,7 +623,12 @@ export default function HumanBodyFemale() {
               </g>
             </g>
           </g>
-          <g className="bodyParts_wrapper Right_Ankle">
+          <g
+            className={`bodyParts_wrapper  Right_Ankle ${
+              selectedArea === "Right_Ankle" ? "fill-[#6e95df]" : "fill-[#1F2B6C]"
+            }`}
+            onClick={() => handlePieceClick("Right_Ankle")}
+          >
             <g className="bodyPartsGroup">
               <path
                 className="bodyParts"
@@ -625,7 +669,12 @@ export default function HumanBodyFemale() {
               </g>
             </g>
           </g>
-          <g className="bodyParts_wrapper Left_Ankle">
+          <g
+            className={`bodyParts_wrapper  Left_Ankle ${
+              selectedArea === "Left_Ankle" ? "fill-[#6e95df]" : "fill-[#1F2B6C]"
+            }`}
+            onClick={() => handlePieceClick("Left_Ankle")}
+          >
             <g className="bodyPartsGroup">
               <path
                 className="bodyParts"
@@ -666,7 +715,12 @@ export default function HumanBodyFemale() {
               </g>
             </g>
           </g>
-          <g className="bodyParts_wrapper Chest">
+          <g
+            className={`bodyParts_wrapper  Chest ${
+              selectedArea === "Chest" ? "fill-[#6e95df]" : "fill-[#1F2B6C]"
+            }`}
+            onClick={() => handlePieceClick("Chest")}
+          >
             <g className="bodyPartsGroup">
               <path
                 className="bodyParts"
@@ -735,7 +789,12 @@ export default function HumanBodyFemale() {
               </g>
             </g>
           </g>
-          <g className="bodyParts_wrapper Upper_GI">
+          <g
+            className={`bodyParts_wrapper  Upper_GI ${
+              selectedArea === "Upper_GI" ? "fill-[#6e95df]" : "fill-[#1F2B6C]"
+            }`}
+            onClick={() => handlePieceClick("Upper_GI")}
+          >
             <g className="bodyPartsGroup">
               <path
                 className="bodyLines"
@@ -951,7 +1010,12 @@ export default function HumanBodyFemale() {
               </g>
             </g>
           </g>
-          <g className="bodyParts_wrapper Lower_Abdomen">
+          <g
+            className={`bodyParts_wrapper  Lower_Abdomen ${
+              selectedArea === "Lower_Abdomen" ? "fill-[#6e95df]" : "fill-[#1F2B6C]"
+            }`}
+            onClick={() => handlePieceClick("Lower_Abdomen")}
+          >
             <g className="bodyPartsGroup">
               <path
                 className="bodyLines"
@@ -1053,7 +1117,12 @@ export default function HumanBodyFemale() {
               </g>
             </g>
           </g>
-          <g className="bodyParts_wrapper">
+          <g
+            className={`bodyParts_wrapper  ${
+              selectedArea === "" ? "fill-[#6e95df]" : "fill-[#1F2B6C]"
+            }`}
+            onClick={() => handlePieceClick("")}
+          >
             <g className="labelGroup labelGroup-hip">
               <rect
                 className="labelArea"
@@ -1076,7 +1145,12 @@ export default function HumanBodyFemale() {
               </g>
             </g>
           </g>
-          <g className="bodyParts_wrapper">
+          <g
+            className={`bodyParts_wrapper  ${
+              selectedArea === "" ? "fill-[#6e95df]" : "fill-[#1F2B6C]"
+            }`}
+            onClick={() => handlePieceClick("")}
+          >
             <g className="labelGroup labelGroup-skin is_right">
               <rect
                 className="labelArea"
@@ -1100,7 +1174,15 @@ export default function HumanBodyFemale() {
             </g>
           </g>
         </svg>
+
+        <div>
+          <h1 className="text-3xl">{selectedArea}</h1>
+        </div>
       </div>
+
+      {/* <div>
+        <h1 className="text-3xl">{selectedArea}</h1>
+      </div> */}
     </div>
   );
 }

@@ -192,7 +192,7 @@ const HumanBody = () => {
           <svg
             data-position="head"
             className={`head fill-[#1F2B6C]  ${
-              selectedArea === "head" ? "fill-[#6e95df]" : "fill-[#1F2B6C] "
+              selectedArea === "head" ? "fill-[#6e95df]" : "fill-[#1F2B6C]"
             }`}
             xmlns="http://www.w3.org/2000/svg"
             width="56.594"

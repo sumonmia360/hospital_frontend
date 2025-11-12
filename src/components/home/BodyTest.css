@@ -1,5 +1,5 @@
 .bodyParts {
-  fill: #1F2B6C;
+  /* fill: #1F2B6C; */
   cursor: pointer;
 }
 .bodyLines {
@@ -15,7 +15,7 @@
   pointer-events: none;
 }
 .labelText {
-  fill: #1F2B6C ;
+  /* fill: #1F2B6C ; */
   fill-rule: nonzero;
   transform: translateX(10px);
   transition: all 0.3s ease;

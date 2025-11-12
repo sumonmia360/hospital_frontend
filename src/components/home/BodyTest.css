@@ -1,5 +1,5 @@
 .bodyParts {
-  fill: #af9763;
+  fill: #1F2B6C;
   cursor: pointer;
 }
 .bodyLines {
@@ -15,7 +15,7 @@
   pointer-events: none;
 }
 .labelText {
-  fill: #af9763;
+  fill: #1F2B6C ;
   fill-rule: nonzero;
   transform: translateX(10px);
   transition: all 0.3s ease;
@@ -48,18 +48,18 @@
   opacity: 1;
 }
 .bodyParts_wrapper:hover .bodyParts {
-  fill: #f58220;
+  fill: #6e95df;
   cursor: pointer;
 }
 .bodyPartsGroup:hover ~ .labelGroup .labelText,
 .labelGroup:hover .labelText {
-  fill: #f58220;
+  fill: #6e95df;
   transform: translateX(0px);
   .bodyParts_group:hover .bodyParts {
-    fill: #f58220;
+    fill: #6e95df;
   }
   .bodyParts_group:hover .labelGroup .labelText {
-    fill: #f58220;
+    fill: #6e95df;
     transform: translateX(0px);
   }
 }

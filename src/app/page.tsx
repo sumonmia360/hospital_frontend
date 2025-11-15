@@ -18,10 +18,8 @@ export default function Home() {
         <Navber></Navber>
       </header>
       <main>
-        <section className="max-w-7xl mx-auto border">
-          <div>
-            <HumanBodyFemale></HumanBodyFemale>
-          </div>
+        <section className="mx-auto border max-w-[1440px] w-full h-full">
+          <HumanBodyFemale></HumanBodyFemale>
         </section>
       </main>
     </div>

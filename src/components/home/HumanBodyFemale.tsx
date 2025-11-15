@@ -1,8 +1,5 @@
 import { useState } from "react";
 import "./BodyTest.css";
-import { Button } from "../ui/button";
-import { FaMale } from "react-icons/fa";
-
 
 export default function HumanBodyFemale() {
   const [selectedArea, setSelectedArea] = useState("Head");
@@ -17,8 +14,13 @@ export default function HumanBodyFemale() {
   // console.log(selectedArea);
 
   return (
-    <div className="grid grid-cols-2 gap-4 justify-center items-center mb-20">
-      <div className="flex flex-col justify-center items-center border">
+    <div className="flex justify-center items-center mb-80">
+      {/* Human body col */}
+      <div className="flex flex-col justify-center items-center ">
+        <h1 className="text-[#1F2B6C] text-center font-bold mt-2">
+          Select Body Part
+        </h1>
+        {/* ============Female Body Structure================= */}
         {selectGender === "female" ? (
           <>
             <svg
@@ -26,7 +28,7 @@ export default function HumanBodyFemale() {
               viewBox="50 10 1450 1500"
               max-width="3000px"
               width="100%"
-              className="border flex justify-center items-center"
+              className=""
             >
               <g
                 className={`bodyParts_wrapper Head ${
@@ -1431,7 +1433,7 @@ export default function HumanBodyFemale() {
               viewBox="50 10 1450 1500"
               max-width="3000px"
               width="100%"
-              className="border "
+              className=""
             >
               <g
                 className={`bodyParts_wrapper Head ${
@@ -2610,26 +2612,40 @@ export default function HumanBodyFemale() {
         )}
         {/* ===================Male Body Structure=============== */}
 
-        {/* ============Female Body Structure================= */}
-
-        {/* ========================= */}
+        {/* ===========Daynamic btn=========== */}
         <div className="flex justify-between items-center  border-2 border-black rounded h-12  w-[200px]">
           <button
-            className={` cursor-pointer w-full h-full ${selectGender === "male" ? "bg-[#1F2B6C] text-white ":""} `}
+            className={` cursor-pointer w-full h-full ${
+              selectGender === "male" ? "bg-[#1F2B6C] text-white " : ""
+            } `}
             onClick={() => handleGender("male")}
           >
-            
             Male
           </button>
-     <div className="h-12 border w-0 border-black"></div>
+          <div className="h-12 border w-0 border-black"></div>
           <button
-            className={` cursor-pointer w-full h-full  ${selectGender === "female" ? "bg-[#1F2B6C] text-white ":""}  `}
+            className={` cursor-pointer w-full h-full  ${
+              selectGender === "female" ? "bg-[#1F2B6C] text-white " : ""
+            }  `}
             onClick={() => handleGender("female")}
           >
             Female
           </button>
-        
         </div>
+      </div>
+      {/* Department col */}
+
+      <div>
+        <h1 className="text-[#1F2B6C] text-center font-bold mt-2">
+          Departsments
+        </h1>
+        <div></div>
+      </div>
+      {/* Doctors col */}
+
+      <div>
+        <h1 className="text-[#1F2B6C] text-center font-bold mt-2">Doctors</h1>
+        <div></div>
       </div>
     </div>
   );

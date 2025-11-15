@@ -1,6 +1,8 @@
 import { useState } from "react";
 import "./BodyTest.css";
 import { Button } from "../ui/button";
+import { FaMale } from "react-icons/fa";
+
 
 export default function HumanBodyFemale() {
   const [selectedArea, setSelectedArea] = useState("Head");
@@ -15,15 +17,16 @@ export default function HumanBodyFemale() {
   // console.log(selectedArea);
 
   return (
-    <div className=" grid grid-cols-2 gap-4 justify-center items-center mb-20">
-      <div className="">
+    <div className="grid grid-cols-2 gap-4 justify-center items-center mb-20">
+      <div className="flex flex-col justify-center items-center border">
         {selectGender === "female" ? (
           <>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              viewBox="140 10 1450 1500"
+              viewBox="50 10 1450 1500"
               max-width="3000px"
               width="100%"
+              className="border flex justify-center items-center"
             >
               <g
                 className={`bodyParts_wrapper Head ${
@@ -1425,10 +1428,10 @@ export default function HumanBodyFemale() {
           <>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              viewBox="140 10 1450 1500"
+              viewBox="50 10 1450 1500"
               max-width="3000px"
               width="100%"
-              className="h-full border"
+              className="border "
             >
               <g
                 className={`bodyParts_wrapper Head ${
@@ -2610,19 +2613,22 @@ export default function HumanBodyFemale() {
         {/* ============Female Body Structure================= */}
 
         {/* ========================= */}
-        <div className="flex justify-between items-center  border-2 border-black rounded-xl p-2 w-[200px]">
-          <Button
-            className={`border border-l`}
+        <div className="flex justify-between items-center  border-2 border-black rounded h-12  w-[200px]">
+          <button
+            className={` cursor-pointer w-full h-full ${selectGender === "male" ? "bg-[#1F2B6C] text-white ":""} `}
             onClick={() => handleGender("male")}
           >
-            Male.
-          </Button>
-          <Button
-            className={`border border-R`}
+            
+            Male
+          </button>
+     <div className="h-12 border w-0 border-black"></div>
+          <button
+            className={` cursor-pointer w-full h-full  ${selectGender === "female" ? "bg-[#1F2B6C] text-white ":""}  `}
             onClick={() => handleGender("female")}
           >
             Female
-          </Button>
+          </button>
+        
         </div>
       </div>
     </div>

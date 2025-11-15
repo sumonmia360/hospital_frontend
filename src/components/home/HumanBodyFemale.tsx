@@ -4,9 +4,31 @@ import "./BodyTest.css";
 export default function HumanBodyFemale() {
   const [selectedArea, setSelectedArea] = useState("Head");
   const [selectGender, setSelectGender] = useState("male");
+  const [deptId, setDeptId] = useState(1);
 
   const handlePieceClick = (gName: string) => {
     setSelectedArea(gName);
+    console.log(gName);
+    switch (gName) {
+      case "Chest":
+        break;
+      case "Head":
+        break;
+
+      case "Neck":
+        break;
+
+      case "Head":
+        break;
+
+      case "Lower_Abdomen":
+        break;
+      
+      case "Lower_Abdomen":
+        break;
+      default:
+        setDeptId(5)
+    }
   };
   const handleGender = (gender: string) => {
     setSelectGender(gender);
@@ -14,10 +36,10 @@ export default function HumanBodyFemale() {
   // console.log(selectedArea);
 
   return (
-    <div className="flex justify-center items-center mb-80">
+    <div className="flex justify-between items-start mb-80">
       {/* Human body col */}
-      <div className="flex flex-col justify-center items-center ">
-        <h1 className="text-[#1F2B6C] text-center font-bold mt-2">
+      <div className="flex flex-col justify-center items-center w-4/12 border">
+        <h1 className="text-[#1F2B6C] text-center font-bold mt-2 text-2xl">
           Select Body Part
         </h1>
         {/* ============Female Body Structure================= */}
@@ -25,7 +47,7 @@ export default function HumanBodyFemale() {
           <>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              viewBox="50 10 1450 1500"
+              viewBox="115 0 1200 1500"
               max-width="3000px"
               width="100%"
               className=""
@@ -1430,7 +1452,7 @@ export default function HumanBodyFemale() {
           <>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              viewBox="50 10 1450 1500"
+              viewBox="115 0 1200 1500"
               max-width="3000px"
               width="100%"
               className=""
@@ -2613,19 +2635,23 @@ export default function HumanBodyFemale() {
         {/* ===================Male Body Structure=============== */}
 
         {/* ===========Daynamic btn=========== */}
-        <div className="flex justify-between items-center  border-2 border-black rounded h-12  w-[200px]">
+        <div className="flex justify-between items-center  border-2 border-[#1F2B6C] rounded h-12  w-[200px]">
           <button
-            className={` cursor-pointer w-full h-full ${
-              selectGender === "male" ? "bg-[#1F2B6C] text-white " : ""
+            className={` cursor-pointer w-full h-full  ${
+              selectGender === "male"
+                ? "bg-[#1F2B6C] text-white "
+                : "text-[#1F2B6C]"
             } `}
             onClick={() => handleGender("male")}
           >
             Male
           </button>
-          <div className="h-12 border w-0 border-black"></div>
+          <div className="h-12 border w-0 border-[#1F2B6C]"></div>
           <button
             className={` cursor-pointer w-full h-full  ${
-              selectGender === "female" ? "bg-[#1F2B6C] text-white " : ""
+              selectGender === "female"
+                ? "bg-[#1F2B6C] text-white "
+                : "text-[#1F2B6C]"
             }  `}
             onClick={() => handleGender("female")}
           >
@@ -2635,16 +2661,18 @@ export default function HumanBodyFemale() {
       </div>
       {/* Department col */}
 
-      <div>
-        <h1 className="text-[#1F2B6C] text-center font-bold mt-2">
+      <div className="w-4/12  border  h-full flex flex-col justify-center items-center">
+        <h1 className="text-[#1F2B6C]  text-center font-bold mt-2  text-2xl ">
           Departsments
         </h1>
         <div></div>
       </div>
       {/* Doctors col */}
 
-      <div>
-        <h1 className="text-[#1F2B6C] text-center font-bold mt-2">Doctors</h1>
+      <div className="w-4/12  border flex flex-col justify-center items-center  h-full">
+        <h1 className="text-[#1F2B6C] text-center font-bold mt-2  text-2xl">
+          Doctors
+        </h1>
         <div></div>
       </div>
     </div>

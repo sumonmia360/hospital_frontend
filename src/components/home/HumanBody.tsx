@@ -31,6 +31,7 @@ const HumanBody = () => {
 
   const HandleDoctors = (docId: number) => {
     setdoctsId(docId);
+    
   };
   console.log(doctsArrayMain.data);
 
